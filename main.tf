@@ -1,7 +1,7 @@
 #Transit VPC
 resource "aviatrix_vpc" "default" {
   cloud_type           = 8
-  name                 = "vnet-transit-${var.region}"
+  name                 = replace(lower("vnet-transit-${var.region}"), " ", "-")
   region               = var.region
   cidr                 = var.cidr
   account_name         = var.azure_account_name
