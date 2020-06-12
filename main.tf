@@ -11,7 +11,7 @@ resource "aviatrix_vpc" "default" {
 resource "aviatrix_transit_gateway" "single" {
   count = var.ha_gw ? 0 : 1
   enable_active_mesh = true
-  cloud_type         = 1
+  cloud_type         = 8
   vpc_reg            = var.region
   gw_name            = replace(lower("tg-${var.region}"), " ", "-")
   gw_size            = var.instance_size
@@ -28,7 +28,7 @@ resource "aviatrix_transit_gateway" "single" {
 resource "aviatrix_transit_gateway" "ha" {
   count = var.ha_gw ? 1 : 0
   enable_active_mesh = true
-  cloud_type         = 1
+  cloud_type         = 8
   vpc_reg            = var.region
   gw_name            = replace(lower("tg-${var.region}"), " ", "-")
   gw_size            = var.instance_size
