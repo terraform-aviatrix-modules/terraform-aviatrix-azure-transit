@@ -1,7 +1,7 @@
 #Transit VPC
 resource "aviatrix_vpc" "default" {
   cloud_type           = 8
-  name                 = "vnet-transit-${var.region_normalized}"
+  name                 = replace(lower("vnet-transit-${var.region}"), " ", "-")
   region               = var.region
   cidr                 = var.cidr
   account_name         = var.azure_account_name
@@ -13,7 +13,7 @@ resource "aviatrix_transit_gateway" "single" {
   enable_active_mesh = true
   cloud_type         = 1
   vpc_reg            = var.region
-  gw_name            = "tg-${var.region_normalized}"
+  gw_name            = replace(lower("tg-${var.region}"), " ", "-")
   gw_size            = var.instance_size
   vpc_id             = aviatrix_vpc.default.vpc_id
   account_name       = var.azure_account_name
@@ -30,7 +30,7 @@ resource "aviatrix_transit_gateway" "ha" {
   enable_active_mesh = true
   cloud_type         = 1
   vpc_reg            = var.region
-  gw_name            = "tg-${var.region_normalized}"
+  gw_name            = replace(lower("tg-${var.region}"), " ", "-")
   gw_size            = var.instance_size
   vpc_id             = aviatrix_vpc.default.vpc_id
   account_name       = var.azure_account_name
