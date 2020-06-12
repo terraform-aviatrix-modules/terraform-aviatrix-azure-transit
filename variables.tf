@@ -2,6 +2,10 @@ variable "region" {
     type = string
     default = "eu-west-1"
 }
+variable "region_normalized" {
+    type = string
+    default = replace(lower(var.region), " ", "-")
+}
 
 variable "cidr" {
     type = string
