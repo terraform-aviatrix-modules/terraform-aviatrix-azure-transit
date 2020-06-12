@@ -4,13 +4,13 @@ resource "aviatrix_vpc" "default" {
   name                 = "vnet-transit-${var.region}"
   region               = var.region
   cidr                 = var.cidr
-  account_name         = var.aws_account_name
+  account_name         = var.azure_account_name
   aviatrix_firenet_vpc = false
   aviatrix_transit_vpc = true
 }
 
 # Single Transit GW
-resource "aviatrix_transit_gateway" "default" {
+resource "aviatrix_transit_gateway" "single" {
   count = var.ha_gw ? 0 : 1
   enable_active_mesh = true
   cloud_type         = 1
@@ -18,8 +18,8 @@ resource "aviatrix_transit_gateway" "default" {
   gw_name            = "tg-${var.region}"
   gw_size            = var.instance_size
   vpc_id             = aviatrix_vpc.default.vpc_id
-  account_name       = var.aws_account_name
-  subnet             = cidrsubnet(var.cidr, 12, 5)
+  account_name       = var.azure_account_name
+  subnet             = cidrsubnet(var.cidr, 4, 0)
   connected_transit  = true
   tag_list = [
     "Auto-StartStop-Enabled:",
@@ -27,7 +27,7 @@ resource "aviatrix_transit_gateway" "default" {
 }
 
 # HA Transit GW
-resource "aviatrix_transit_gateway" "default" {
+resource "aviatrix_transit_gateway" "ha" {
   count = var.ha_gw ? 1 : 0
   enable_active_mesh = true
   cloud_type         = 1
@@ -35,9 +35,9 @@ resource "aviatrix_transit_gateway" "default" {
   gw_name            = "tg-${var.region}"
   gw_size            = var.instance_size
   vpc_id             = aviatrix_vpc.default.vpc_id
-  account_name       = var.aws_account_name
-  subnet             = cidrsubnet(var.cidr, 12, 5)
-  ha_subnet          = cidrsubnet(var.cidr, 12, 6)
+  account_name       = var.azure_account_name
+  subnet             = cidrsubnet(var.cidr, 4, 0)
+  ha_subnet          = cidrsubnet(var.cidr, 4, 1)
   ha_gw_size         = var.instance_size
   connected_transit  = true
   tag_list = [
