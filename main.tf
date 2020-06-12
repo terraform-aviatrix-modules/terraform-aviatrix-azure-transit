@@ -1,7 +1,7 @@
 #Transit VPC
 resource "aviatrix_vpc" "default" {
-  cloud_type           = 1
-  name                 = "vpc-transit-${var.region}"
+  cloud_type           = 8
+  name                 = "vnet-transit-${var.region}"
   region               = var.region
   cidr                 = var.cidr
   account_name         = var.aws_account_name

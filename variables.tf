@@ -7,13 +7,13 @@ variable "cidr" {
     type = string
 }
 
-variable "aws_account_name" {
+variable "azure_account_name" {
     type = string
 }
 
 variable "instance_size" {
     type = string
-    default = "t2.micro"
+    default = "Standard_B1s"
 }
 
 variable "ha_gw" {
