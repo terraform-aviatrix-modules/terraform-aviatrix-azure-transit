@@ -19,9 +19,6 @@ resource "aviatrix_transit_gateway" "single" {
   account_name       = var.azure_account_name
   subnet             = cidrsubnet(var.cidr, 4, 0)
   connected_transit  = true
-  tag_list = [
-    "Auto-StartStop-Enabled:",
-  ]
 }
 
 # HA Transit GW
@@ -38,8 +35,5 @@ resource "aviatrix_transit_gateway" "ha" {
   ha_subnet          = cidrsubnet(var.cidr, 4, 1)
   ha_gw_size         = var.instance_size
   connected_transit  = true
-  tag_list = [
-    "Auto-StartStop-Enabled:",
-  ]
 }
 
