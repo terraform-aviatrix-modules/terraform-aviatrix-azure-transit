@@ -32,7 +32,7 @@ resource "aviatrix_transit_gateway" "ha" {
   vpc_id             = aviatrix_vpc.default.vpc_id
   account_name       = var.azure_account_name
   subnet             = cidrsubnet(var.cidr, 4, 0)
-  ha_subnet          = cidrsubnet(var.cidr, 4, 1)
+  ha_subnet          = cidrsubnet(var.cidr, 4, 2)
   ha_gw_size         = var.instance_size
   connected_transit  = true
 }
