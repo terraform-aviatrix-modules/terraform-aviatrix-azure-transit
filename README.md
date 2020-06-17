@@ -10,7 +10,7 @@ key | value
 --- | ---
 region | Azure region to deploy the transit VNET in
 azure_account_name | The Azure accountname on the Aviatrix controller, under which the controller will deploy this VNET
-cidr | The IP CIDR wo be used to create the VNET. Assumes a /16.
+cidr | The IP CIDR wo be used to create the VNET.
 
 The following variables are optional:
 

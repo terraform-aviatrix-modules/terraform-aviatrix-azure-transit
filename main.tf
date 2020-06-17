@@ -17,7 +17,7 @@ resource "aviatrix_transit_gateway" "single" {
   gw_size            = var.instance_size
   vpc_id             = aviatrix_vpc.default.vpc_id
   account_name       = var.azure_account_name
-  subnet             = cidrsubnet(var.cidr, 4, 0)
+  subnet             = aviatrix_vpc.default.subnets[0].cidr
   connected_transit  = true
 }
 
@@ -31,8 +31,8 @@ resource "aviatrix_transit_gateway" "ha" {
   gw_size            = var.instance_size
   vpc_id             = aviatrix_vpc.default.vpc_id
   account_name       = var.azure_account_name
-  subnet             = cidrsubnet(var.cidr, 4, 0)
-  ha_subnet          = cidrsubnet(var.cidr, 4, 2)
+  subnet             = aviatrix_vpc.default.subnets[0].cidr
+  ha_subnet          = aviatrix_vpc.default.subnets[2].cidr
   ha_gw_size         = var.instance_size
   connected_transit  = true
 }
