@@ -1,7 +1,7 @@
-# Module Aviatrix Transit VPC for Azure
+# Module Aviatrix Transit VNET for Azure
 
 ### Description
-This module deploys a VPC and an Aviatrix transit gateway. Defining the Aviatrix Terraform provider is assumed upstream and is not part of this module.
+This module deploys a VNET and an Aviatrix transit gateway. Defining the Aviatrix Terraform provider is assumed upstream and is not part of this module.
 
 ### Diagram
 <img src="https://dhagens-repository-images-public.s3.eu-central-1.amazonaws.com/terraform-aviatrix-azure-transit/module-aviatrix-transit-vpc-for-azure-ha.png"  height="250">
