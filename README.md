@@ -4,7 +4,11 @@
 This module deploys a VPC and an Aviatrix transit gateway. Defining the Aviatrix Terraform provider is assumed upstream and is not part of this module.
 
 ### Diagram
-<img src="images/module-aviatrix-transit-vpc-for-azure.png"  height="250">
+<img src="https://dhagens-repository-images-public.s3.eu-central-1.amazonaws.com/terraform-aviatrix-azure-transit/module-aviatrix-transit-vpc-for-azure-ha.png"  height="250">
+
+with ha_gw set to false, the following will be deployed:
+
+<img src="https://dhagens-repository-images-public.s3.eu-central-1.amazonaws.com/terraform-aviatrix-azure-transit/module-aviatrix-transit-vpc-for-azure.png"  height="250">
 
 ### Usage Example
 ```
@@ -42,7 +46,3 @@ key | description
 :--- | :---
 vnet | The created vnet as an object with all of it's attributes. This was created using the aviatrix_vpc resource.
 transit_gateway | The created Aviatrix transit gateway as an object with all of it's attributes.
-
-When ha_gw is set to true, the deployed infrastructure will look like this:
-
-<img src="images/module-aviatrix-transit-vpc-for-azure-ha.png"  height="250">
