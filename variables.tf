@@ -22,5 +22,5 @@ variable "instance_size" {
 variable "ha_gw" {
     description = "Boolean to determine if module will be deployed in HA or single mode"
     type = bool
-    default = false
+    default = true
 }
