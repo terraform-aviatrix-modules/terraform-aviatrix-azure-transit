@@ -1,7 +1,7 @@
 # Module Aviatrix Transit VNET for Azure
 
 ### Description
-This module deploys a VNET and an Aviatrix transit gateway.
+This module deploys a VNET and a set of Aviatrix transit gateways.
 
 ### Diagram
 <img src="https://dhagens-repository-images-public.s3.eu-central-1.amazonaws.com/terraform-aviatrix-azure-transit/module-aviatrix-transit-vpc-for-azure-ha.png"  height="250">
