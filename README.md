@@ -14,7 +14,7 @@ with ha_gw set to false, the following will be deployed:
 ```
 module "transit_azure_1" {
   source  = "terraform-aviatrix-modules/azure-transit/aviatrix"
-  version = "v1.0.1"
+  version = "v1.0.2"
   
   cidr = "10.1.0.0/20"
   region = "West Europe"
