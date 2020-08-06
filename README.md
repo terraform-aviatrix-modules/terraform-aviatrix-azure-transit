@@ -35,7 +35,7 @@ The following variables are optional:
 
 key | default | value
 :---|:---|:---
-instance_size | Standard_B1s | Size of the transit gateway instances
+instance_size | Standard_B1ms | Size of the transit gateway instances
 ha_gw | true | Set to false to deploy a single transit GW
 
 ### Outputs
