@@ -16,7 +16,7 @@ variable "azure_account_name" {
 variable "instance_size" {
     description = "Azure Instance size for the Aviatrix gateways"
     type = string
-    default = "Standard_B1s"
+    default = "Standard_B1ms"
 }
 
 variable "ha_gw" {
