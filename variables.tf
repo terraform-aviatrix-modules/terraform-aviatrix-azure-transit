@@ -11,6 +11,13 @@ variable "cidr" {
 variable "account" {
   description = "The Azure account name, as known by the Aviatrix controller"
   type        = string
+  default     = ""
+}
+
+variable "name" {
+  description = "Custom name for VNETs, gateways, and firewalls"
+  type        = string
+  default     = ""
 }
 
 variable "instance_size" {
@@ -26,13 +33,36 @@ variable "ha_gw" {
 }
 
 variable "connected_transit" {
-  description = ""
+  description = "Enables Aviatrix connected transit"
   type        = bool
   default     = true
 }
 
 variable "active_mesh" {
-  description = ""
+  description = "Enables Aviatrix active mesh"
   type        = bool
   default     = true
+}
+
+variable "insane_mode" {
+  description = "Set to true to enable Aviatrix high performance encryption."
+  type        = bool
+  default     = false
+}
+
+###
+
+variable "controller_ip" {
+  type    = string
+  default = ""
+}
+
+variable "username" {
+  type    = string
+  default = ""
+}
+
+variable "password" {
+  type    = string
+  default = ""
 }
