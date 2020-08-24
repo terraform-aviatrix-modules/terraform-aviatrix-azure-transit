@@ -18,7 +18,7 @@ module "transit_azure_1" {
   
   cidr = "10.1.0.0/20"
   region = "West Europe"
-  azure_account_name = "Azure"
+  account = "Azure"
 }
 ```
 
@@ -28,7 +28,7 @@ The following variables are required:
 key | value
 :--- | :---
 region | Azure region to deploy the transit VNET in
-azure_account_name | The Azure accountname on the Aviatrix controller, under which the controller will deploy this VNET
+account | The Azure accountname on the Aviatrix controller, under which the controller will deploy this VNET
 cidr | The IP CIDR wo be used to create the VNET.
 
 The following variables are optional:
@@ -37,6 +37,8 @@ key | default | value
 :---|:---|:---
 instance_size | Standard_B1ms | Size of the transit gateway instances
 ha_gw | true | Set to false to deploy a single transit GW
+connected_transit | true |
+active_mesh | true |
 
 ### Outputs
 Outputs
