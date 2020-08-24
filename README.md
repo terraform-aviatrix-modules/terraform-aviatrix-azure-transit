@@ -3,6 +3,14 @@
 ### Description
 This module deploys a VNET and a set of Aviatrix transit gateways.
 
+### Compatibility
+Module version | Terraform version | Controller version | Terraform provider version
+:--- | :--- | :--- | :---
+v1.0.2 | 0.12 | 6.1 | 2.16, 2.16.1
+v1.0.2 | 0.12 | 6.0 | 2.15, 2.15.1
+v1.0.1 | 0.12 | |
+v1.0.0 | 0.12 | |
+
 ### Diagram
 <img src="https://dhagens-repository-images-public.s3.eu-central-1.amazonaws.com/terraform-aviatrix-azure-transit/module-aviatrix-transit-vpc-for-azure-ha.png"  height="250">
 
