@@ -49,20 +49,3 @@ variable "insane_mode" {
   type        = bool
   default     = false
 }
-
-###
-
-variable "controller_ip" {
-  type    = string
-  default = ""
-}
-
-variable "username" {
-  type    = string
-  default = ""
-}
-
-variable "password" {
-  type    = string
-  default = ""
-}
