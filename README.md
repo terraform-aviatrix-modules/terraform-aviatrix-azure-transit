@@ -6,23 +6,24 @@ This module deploys a VNET and a set of Aviatrix transit gateways.
 ### Compatibility
 Module version | Terraform version | Controller version | Terraform provider version
 :--- | :--- | :--- | :---
+v1.1.0 | 0.12 | 6.1 | 2.16, 2.16.1, 2.16.2
 v1.0.2 | 0.12 | 6.1 | 2.16, 2.16.1
 v1.0.2 | 0.12 | 6.0 | 2.15, 2.15.1
 v1.0.1 | 0.12 | |
 v1.0.0 | 0.12 | |
 
 ### Diagram
-<img src="https://dhagens-repository-images-public.s3.eu-central-1.amazonaws.com/terraform-aviatrix-azure-transit/module-aviatrix-transit-vpc-for-azure-ha.png"  height="250">
+<img src="https://github.com/terraform-aviatrix-modules/terraform-aviatrix-azure-transit/blob/master/img/module-aviatrix-transit-vpc-for-azure-ha.png?raw=true">
 
 with ha_gw set to false, the following will be deployed:
 
-<img src="https://dhagens-repository-images-public.s3.eu-central-1.amazonaws.com/terraform-aviatrix-azure-transit/module-aviatrix-transit-vpc-for-azure.png"  height="250">
+<img src="https://github.com/terraform-aviatrix-modules/terraform-aviatrix-azure-transit/blob/master/img/module-aviatrix-transit-vpc-for-azure.png?raw=true">
 
 ### Usage Example
 ```
 module "transit_azure_1" {
   source  = "terraform-aviatrix-modules/azure-transit/aviatrix"
-  version = "v1.0.2"
+  version = "v1.1.0"
   
   cidr = "10.1.0.0/20"
   region = "West Europe"
