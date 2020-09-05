@@ -18,7 +18,7 @@ resource "aviatrix_transit_gateway" "single" {
   vpc_id             = aviatrix_vpc.default.vpc_id
   account_name       = var.account
   subnet             = var.insane_mode ? cidrsubnet(aviatrix_vpc.default.cidr, 3, 6) : aviatrix_vpc.default.subnets[0].cidr
-  insane_mode        = var.insane_mode ? true : false
+  insane_mode        = var.insane_mode
   connected_transit  = var.connected_transit
 }
 
@@ -34,7 +34,7 @@ resource "aviatrix_transit_gateway" "ha" {
   account_name       = var.account
   subnet             = var.insane_mode ? cidrsubnet(aviatrix_vpc.default.cidr, 3, 6) : aviatrix_vpc.default.subnets[0].cidr
   ha_subnet          = var.insane_mode ? cidrsubnet(aviatrix_vpc.default.cidr, 3, 7) : aviatrix_vpc.default.subnets[2].cidr
-  insane_mode        = var.insane_mode ? true : false
+  insane_mode        = var.insane_mode
   ha_gw_size         = var.instance_size
   connected_transit  = var.connected_transit
 }
