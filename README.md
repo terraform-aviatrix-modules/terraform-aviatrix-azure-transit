@@ -49,6 +49,8 @@ ha_gw | true | Set to false to deploy a single transit GW
 name | null | When this string is set, user defined name is applied to all infrastructure supporting n+1 sets within a same region or other customization
 insane_mode | false | Set to true to enable Aviatrix insane mode high-performance encryption
 connected_transit | true | Allows spokes to run traffic to other spokes via transit gateway
+bgp_manual_spoke_advertise_cidrs | | Intended CIDR list to advertise via BGP. Example: "10.2.0.0/16,10.4.0.0/16" 
+learned_cidr_approval | false | Switch to true to enable learned CIDR approval
 active_mesh | true | Set to false to disable Active Mesh mode for the transit gateway
 
 ### Outputs

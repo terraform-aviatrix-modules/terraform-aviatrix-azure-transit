@@ -44,6 +44,18 @@ variable "active_mesh" {
   default     = true
 }
 
+variable "bgp_manual_spoke_advertise_cidrs" {
+  description = "Define a list of CIDRs that should be advertised via BGP."
+  type        = string
+  default     = ""
+}
+
+variable "learned_cidr_approval" {
+  description = "Set to true to enable learned CIDR approval."
+  type        = string
+  default     = "false"
+}
+
 variable "insane_mode" {
   description = "Set to true to enable Aviatrix high performance encryption."
   type        = bool
