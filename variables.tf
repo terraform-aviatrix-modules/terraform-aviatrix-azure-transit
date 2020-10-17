@@ -20,6 +20,18 @@ variable "name" {
   default     = ""
 }
 
+variable "prefix" {
+  description = "Boolean to determine if name will be prepended with avx-"
+  type        = bool
+  default     = true
+}
+
+variable "suffix" {
+  description = "Boolean to determine if name will be appended with -spoke"
+  type        = bool
+  default     = true
+}
+
 variable "instance_size" {
   description = "Azure Instance size for the Aviatrix gateways"
   type        = string
@@ -60,4 +72,13 @@ variable "insane_mode" {
   description = "Set to true to enable Aviatrix high performance encryption."
   type        = bool
   default     = false
+}
+
+locals {
+  lower_name        = length(var.name) > 0 ? replace(lower(var.name), " ", "-") : replace(lower(var.region), " ", "-")
+  prefix            = var.prefix ? "avx-" : ""
+  suffix            = var.suffix ? "-transit" : ""
+  name              = "${local.prefix}${local.lower_name}${local.suffix}"
+  subnet            = var.insane_mode ? cidrsubnet(var.cidr, 3, 6) : aviatrix_vpc.default.subnets[0].cidr
+  ha_subnet         = var.insane_mode ? cidrsubnet(var.cidr, 3, 7) : aviatrix_vpc.default.subnets[0].cidr
 }

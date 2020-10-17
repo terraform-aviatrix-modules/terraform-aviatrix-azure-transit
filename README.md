@@ -6,6 +6,7 @@ This module deploys a VNET and a set of Aviatrix transit gateways.
 ### Compatibility
 Module version | Terraform version | Controller version | Terraform provider version
 :--- | :--- | :--- | :---
+v1.1.1 | 0.12 | |
 v1.1.0 | 0.12 | 6.1 | 2.16, 2.16.1, 2.16.2
 v1.0.2 | 0.12 | 6.1 | 2.16, 2.16.1
 v1.0.2 | 0.12 | 6.0 | 2.15, 2.15.1
@@ -52,6 +53,8 @@ connected_transit | true | Allows spokes to run traffic to other spokes via tran
 bgp_manual_spoke_advertise_cidrs | | Intended CIDR list to advertise via BGP. Example: "10.2.0.0/16,10.4.0.0/16" 
 learned_cidr_approval | false | Switch to true to enable learned CIDR approval
 active_mesh | true | Set to false to disable Active Mesh mode for the transit gateway
+prefix | true | Boolean to enable prefix name with avx-
+suffix | true | Boolean to enable suffix name with -transit
 
 ### Outputs
 Outputs
