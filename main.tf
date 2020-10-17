@@ -24,4 +24,3 @@ resource "aviatrix_transit_gateway" "default" {
   bgp_manual_spoke_advertise_cidrs = var.bgp_manual_spoke_advertise_cidrs
   enable_learned_cidrs_approval    = var.learned_cidr_approval
 }
-
