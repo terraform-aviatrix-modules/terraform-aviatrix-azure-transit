@@ -6,6 +6,7 @@ This module deploys a VNET and a set of Aviatrix transit gateways.
 ### Compatibility
 Module version | Terraform version | Controller version | Terraform provider version
 :--- | :--- | :--- | :---
+v2.0.0 | 0.12 | >=6.2 | >=0.2.17
 v1.1.1 | 0.12 | |
 v1.1.0 | 0.12 | 6.1 | 2.16, 2.16.1, 2.16.2
 v1.0.2 | 0.12 | 6.1 | 2.16, 2.16.1
@@ -24,7 +25,7 @@ with ha_gw set to false, the following will be deployed:
 ```
 module "transit_azure_1" {
   source  = "terraform-aviatrix-modules/azure-transit/aviatrix"
-  version = "v1.1.1"
+  version = "v2.0.0"
   
   cidr = "10.1.0.0/20"
   region = "West Europe"
@@ -55,6 +56,7 @@ learned_cidr_approval | false | Switch to true to enable learned CIDR approval
 active_mesh | true | Set to false to disable Active Mesh mode for the transit gateway
 prefix | true | Boolean to enable prefix name with avx-
 suffix | true | Boolean to enable suffix name with -transit
+enable_segmentation | false | Switch to true to enable transit segmentation
 
 ### Outputs
 Outputs
