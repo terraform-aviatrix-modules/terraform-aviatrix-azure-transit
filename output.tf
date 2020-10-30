@@ -1,5 +1,5 @@
-output "vpc" {
-  description = "The created VPC with all of it's attributes"
+output "vnet" {
+  description = "The created VNET with all of it's attributes"
   value       = aviatrix_vpc.default
 }
 
