@@ -57,6 +57,13 @@ active_mesh | true | Set to false to disable Active Mesh mode for the transit ga
 prefix | true | Boolean to enable prefix name with avx-
 suffix | true | Boolean to enable suffix name with -transit
 enable_segmentation | false | Switch to true to enable transit segmentation
+single_ip_snat | false | Enable single_ip mode Source NAT for this container
+enable_advertise_transit_cidr  | false | Switch to enable/disable advertise transit VPC network CIDR for a VGW connection
+enable_firenet  | false | Sign of readiness for FireNet connection
+enable_transit_firenet  | false | Sign of readiness for Transit FireNet connection
+enable_egress_transit_firenet  | false | Enable Egress Transit FireNet
+bgp_polling_time  | 50 | BGP route polling time. Unit is in seconds
+bgp_ecmp  | false | Enable Equal Cost Multi Path (ECMP) routing for the next hop
 
 ### Outputs
 Outputs
