@@ -10,10 +10,10 @@ output "transit_gateway" {
 
 output "azure_vnet_name" {
   description = "The Azure vnet name"
-  value       = "${split(":", aviatrix_vpc.default.vpc_id)[0]}"
+  value       = split(":", aviatrix_vpc.default.vpc_id)[0]
 }
 
 output "azure_rg" {
   description = "The Azure resource group name"
-  value       = "${split(":", aviatrix_vpc.default.vpc_id)[1]}"
+  value       = split(":", aviatrix_vpc.default.vpc_id)[1]
 }
