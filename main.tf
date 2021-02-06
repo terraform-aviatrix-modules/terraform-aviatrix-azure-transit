@@ -32,4 +32,5 @@ resource "aviatrix_transit_gateway" "default" {
   enable_egress_transit_firenet    = var.enable_egress_transit_firenet
   bgp_polling_time                 = var.bgp_polling_time
   bgp_ecmp                         = var.bgp_ecmp
+  local_as_number                  = var.local_as_number  
 }

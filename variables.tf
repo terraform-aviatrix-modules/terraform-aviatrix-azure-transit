@@ -127,6 +127,11 @@ variable "bgp_ecmp" {
   default     = false
 }
 
+variable "local_as_number" {
+  description = "The gateways local AS number"
+  type        = string
+}
+
 locals {
   lower_name = length(var.name) > 0 ? replace(lower(var.name), " ", "-") : replace(lower(var.region), " ", "-")
   prefix     = var.prefix ? "avx-" : ""
