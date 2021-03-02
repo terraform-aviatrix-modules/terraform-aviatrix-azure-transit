@@ -6,6 +6,7 @@ This module deploys a VNET and a set of Aviatrix transit gateways.
 ### Compatibility
 Module version | Terraform version | Controller version | Terraform provider version
 :--- | :--- | :--- | :---
+v3.0.1 | 0.13 | >=6.3 | >=0.2.18
 v3.0.0 | 0.13 | >=6.2 | >=0.2.17
 v2.0.0 | 0.12 | >=6.2 | >=0.2.17
 v1.1.1 | 0.12 | |
@@ -42,6 +43,7 @@ key | value
 region | Azure region to deploy the transit VNET in
 account | The Azure account name on the Aviatrix controller, under which the controller will deploy this VNET
 cidr | The IP CIDR wo be used to create the VNET.
+local_as_number | Transit GW AS Number
 
 The following variables are optional:
 
@@ -65,7 +67,9 @@ enable_firenet  | false | Sign of readiness for FireNet connection
 enable_transit_firenet  | false | Sign of readiness for Transit FireNet connection
 enable_egress_transit_firenet  | false | Enable Egress Transit FireNet
 bgp_polling_time  | 50 | BGP route polling time. Unit is in seconds
-bgp_ecmp  | false | Enable Equal Cost Multi Path (ECMP) routing for the next hop
+bgp_ecmp | false | Enable Equal Cost Multi Path (ECMP) routing for the next hop
+local_as_number	| |	Changes the Aviatrix Transit Gateway ASN number before you setup Aviatrix Transit Gateway connection configurations.
+enable_bgp_over_lan |	false |	Enable BGp over LAN. Creates eth4 for integration with SDWAN for example
 
 ### Outputs
 Outputs
