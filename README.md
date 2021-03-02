@@ -68,6 +68,8 @@ enable_transit_firenet  | false | Sign of readiness for Transit FireNet connec
 enable_egress_transit_firenet  | false | Enable Egress Transit FireNet
 bgp_polling_time  | 50 | BGP route polling time. Unit is in seconds
 bgp_ecmp | false | Enable Equal Cost Multi Path (ECMP) routing for the next hop
+local_as_number	| |	Changes the Aviatrix Transit Gateway ASN number before you setup Aviatrix Transit Gateway connection configurations.
+enable_bgp_over_lan |	false |	Enable BGp over LAN. Creates eth4 for integration with SDWAN for example
 
 ### Outputs
 Outputs
