@@ -130,6 +130,7 @@ variable "bgp_ecmp" {
 variable "local_as_number" {
   description = "The gateways local AS number"
   type        = string
+  default     = null
 }
 
 variable "enable_bgp_over_lan" {
