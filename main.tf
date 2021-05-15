@@ -34,4 +34,6 @@ resource "aviatrix_transit_gateway" "default" {
   bgp_ecmp                         = var.bgp_ecmp
   local_as_number                  = var.local_as_number
   enable_bgp_over_lan              = var.enable_bgp_over_lan
+  zone                             = var.az_support ? var.az1 : null
+  ha_zone                          = var.ha_gw ? (var.az_support ? var.az2 : null) : null
 }
