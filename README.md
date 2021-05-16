@@ -6,6 +6,7 @@ This module deploys a VNET and a set of Aviatrix transit gateways.
 ### Compatibility
 Module version | Terraform version | Controller version | Terraform provider version
 :--- | :--- | :--- | :---
+v4.0.0 | 0.13 + 0.14 | >=6.4 | >=0.2.19
 v3.0.1 | 0.13 | >=6.3 | >=0.2.18
 v3.0.0 | 0.13 | >=6.2 | >=0.2.17
 
@@ -22,7 +23,7 @@ with ha_gw set to false, the following will be deployed:
 ```
 module "transit_azure_1" {
   source  = "terraform-aviatrix-modules/azure-transit/aviatrix"
-  version = "3.0.0"
+  version = "4.0.0"
   
   cidr = "10.1.0.0/20"
   region = "West Europe"
@@ -38,7 +39,6 @@ key | value
 region | Azure region to deploy the transit VNET in
 account | The Azure account name on the Aviatrix controller, under which the controller will deploy this VNET
 cidr | The IP CIDR wo be used to create the VNET.
-local_as_number | Transit GW AS Number
 
 The following variables are optional:
 
@@ -72,6 +72,8 @@ resource_group | null | Provide the name of an existing resource group.
 tunnel_detection_time | null | The IPsec tunnel down detection time for the Spoke Gateway in seconds. Must be a number in the range [20-600]. Default is 60.
 tags | null | Map of tags to assign to the gateway.
 enable_multi_tier_transit |	false |	Switch to enable multi tier transit
+local_as_number | | Transit GW AS Number. Mandatory when multi tier transit is enabled.
+
 
 ### Outputs
 Outputs
