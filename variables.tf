@@ -11,13 +11,12 @@ variable "cidr" {
 variable "account" {
   description = "The Azure account name, as known by the Aviatrix controller"
   type        = string
-  default     = ""
 }
 
 variable "name" {
   description = "Custom name for VNETs, gateways, and firewalls"
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "prefix" {
@@ -59,13 +58,13 @@ variable "active_mesh" {
 variable "bgp_manual_spoke_advertise_cidrs" {
   description = "Define a list of CIDRs that should be advertised via BGP."
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "learned_cidr_approval" {
   description = "Set to true to enable learned CIDR approval."
-  type        = string
-  default     = "false"
+  type        = bool
+  default     = false
 }
 
 variable "insane_mode" {
@@ -118,7 +117,7 @@ variable "enable_egress_transit_firenet" {
 variable "bgp_polling_time" {
   description = "BGP route polling time. Unit is in seconds"
   type        = string
-  default     = "50"
+  default     = null
 }
 
 variable "bgp_ecmp" {
@@ -134,7 +133,7 @@ variable "local_as_number" {
 }
 
 variable "enable_bgp_over_lan" {
-  description = "Enable BGp over LAN. Creates eth4 for integration with SDWAN for example"
+  description = "Enable BGP over LAN. Creates eth4 for integration with SDWAN for example"
   type        = bool
   default     = false
 }
@@ -163,10 +162,8 @@ variable "resource_group" {
   default     = null
 }
 
- 
-
 locals {
-  lower_name = length(var.name) > 0 ? replace(lower(var.name), " ", "-") : replace(lower(var.region), " ", "-")
+  lower_name = var.name ? replace(lower(var.name), " ", "-") : replace(lower(var.region), " ", "-")
   prefix     = var.prefix ? "avx-" : ""
   suffix     = var.suffix ? "-transit" : ""
   name       = "${local.prefix}${local.lower_name}${local.suffix}"
