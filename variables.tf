@@ -16,7 +16,7 @@ variable "account" {
 variable "name" {
   description = "Custom name for VNETs, gateways, and firewalls"
   type        = string
-  default     = null
+  default     = ""
 }
 
 variable "prefix" {
@@ -163,7 +163,7 @@ variable "resource_group" {
 }
 
 locals {
-  lower_name = var.name ? replace(lower(var.name), " ", "-") : replace(lower(var.region), " ", "-")
+  lower_name = length(var.name) > 0 ? replace(lower(var.name), " ", "-") : replace(lower(var.region), " ", "-")
   prefix     = var.prefix ? "avx-" : ""
   suffix     = var.suffix ? "-transit" : ""
   name       = "${local.prefix}${local.lower_name}${local.suffix}"
