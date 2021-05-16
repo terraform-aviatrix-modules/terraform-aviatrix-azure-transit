@@ -37,4 +37,7 @@ resource "aviatrix_transit_gateway" "default" {
   enable_bgp_over_lan              = var.enable_bgp_over_lan
   zone                             = var.az_support ? var.az1 : null
   ha_zone                          = var.ha_gw ? (var.az_support ? var.az2 : null) : null
+  tunnel_detection_time            = var.tunnel_detection_time
+  tags                             = var.tags
+  enable_multi_tier_transit        = var.enable_multi_tier_transit
 }

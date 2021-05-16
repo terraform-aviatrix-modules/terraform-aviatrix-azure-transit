@@ -8,13 +8,8 @@ Module version | Terraform version | Controller version | Terraform provider ver
 :--- | :--- | :--- | :---
 v3.0.1 | 0.13 | >=6.3 | >=0.2.18
 v3.0.0 | 0.13 | >=6.2 | >=0.2.17
-v2.0.0 | 0.12 | >=6.2 | >=0.2.17
-v1.1.1 | 0.12 | |
-v1.1.0 | 0.12 | 6.1 | 2.16, 2.16.1, 2.16.2
-v1.0.2 | 0.12 | 6.1 | 2.16, 2.16.1
-v1.0.2 | 0.12 | 6.0 | 2.15, 2.15.1
-v1.0.1 | 0.12 | |
-v1.0.0 | 0.12 | |
+
+**_Information on older releases can be found in respective release notes._*
 
 ### Diagram
 <img src="https://github.com/terraform-aviatrix-modules/terraform-aviatrix-azure-transit/blob/master/img/module-aviatrix-transit-vpc-for-azure-ha.png?raw=true">
@@ -74,6 +69,9 @@ az_support | true | Set to false if the Azure region does not support Availabili
 az1 | az-1 | AZ Zone to be used for Transit GW
 az2 | az-2 | AZ Zone to be used for HA Transit GW
 resource_group | null | Provide the name of an existing resource group.
+tunnel_detection_time | null | The IPsec tunnel down detection time for the Spoke Gateway in seconds. Must be a number in the range [20-600]. Default is 60.
+tags | null | Map of tags to assign to the gateway.
+enable_multi_tier_transit |	false |	Switch to enable multi tier transit
 
 ### Outputs
 Outputs

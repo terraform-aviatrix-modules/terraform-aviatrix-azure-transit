@@ -162,6 +162,24 @@ variable "resource_group" {
   default     = null
 }
 
+variable "tunnel_detection_time" {
+  description = "The IPsec tunnel down detection time for the Spoke Gateway in seconds. Must be a number in the range [20-600]."
+  type        = number
+  default     = null
+}
+
+variable "tags" {
+  description = "Map of tags to assign to the gateway."
+  type        = map(string)
+  default     = null
+}
+
+variable "enable_multi_tier_transit" {
+  description = "Set to true to enable multi tier transit."
+  type        = bool
+  default     = false
+}
+
 locals {
   lower_name = length(var.name) > 0 ? replace(lower(var.name), " ", "-") : replace(lower(var.region), " ", "-")
   prefix     = var.prefix ? "avx-" : ""
