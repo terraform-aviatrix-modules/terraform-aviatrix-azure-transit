@@ -64,7 +64,7 @@ enable_egress_transit_firenet  | false | Enable Egress Transit FireNet
 bgp_polling_time  | 50 | BGP route polling time. Unit is in seconds
 bgp_ecmp | false | Enable Equal Cost Multi Path (ECMP) routing for the next hop
 local_as_number	| null |Changes the Aviatrix Transit Gateway ASN number before you setup Aviatrix Transit Gateway connection configurations.
-enable_bgp_over_lan |	false |	Enable BGp over LAN. Creates eth4 for integration with SDWAN for example
+enable_bgp_over_lan |	false |	Enable BGP over LAN. Creates eth4 for integration with SDWAN for example
 az_support | true | Set to false if the Azure region does not support Availability Zones.
 az1 | az-1 | AZ Zone to be used for Transit GW
 az2 | az-2 | AZ Zone to be used for HA Transit GW
