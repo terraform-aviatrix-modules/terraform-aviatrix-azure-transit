@@ -157,6 +157,14 @@ variable "az2" {
   default     = "az-2"
 }
 
+variable "resource_group" {
+  description = "Provide the name of an existing resource group."
+  type        = string
+  default     = null
+}
+
+ 
+
 locals {
   lower_name = length(var.name) > 0 ? replace(lower(var.name), " ", "-") : replace(lower(var.region), " ", "-")
   prefix     = var.prefix ? "avx-" : ""

@@ -73,6 +73,7 @@ enable_bgp_over_lan |	false |	Enable BGp over LAN. Creates eth4 for integration 
 az_support | true | Set to false if the Azure region does not support Availability Zones.
 az1 | az-1 | AZ Zone to be used for Transit GW
 az2 | az-2 | AZ Zone to be used for HA Transit GW
+resource_group | null | Provide the name of an existing resource group.
 
 ### Outputs
 Outputs
