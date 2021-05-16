@@ -11,7 +11,6 @@ variable "cidr" {
 variable "account" {
   description = "The Azure account name, as known by the Aviatrix controller"
   type        = string
-  default     = ""
 }
 
 variable "name" {
@@ -59,13 +58,13 @@ variable "active_mesh" {
 variable "bgp_manual_spoke_advertise_cidrs" {
   description = "Define a list of CIDRs that should be advertised via BGP."
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "learned_cidr_approval" {
   description = "Set to true to enable learned CIDR approval."
-  type        = string
-  default     = "false"
+  type        = bool
+  default     = false
 }
 
 variable "insane_mode" {
@@ -118,7 +117,7 @@ variable "enable_egress_transit_firenet" {
 variable "bgp_polling_time" {
   description = "BGP route polling time. Unit is in seconds"
   type        = string
-  default     = "50"
+  default     = null
 }
 
 variable "bgp_ecmp" {
@@ -134,7 +133,7 @@ variable "local_as_number" {
 }
 
 variable "enable_bgp_over_lan" {
-  description = "Enable BGp over LAN. Creates eth4 for integration with SDWAN for example"
+  description = "Enable BGP over LAN. Creates eth4 for integration with SDWAN for example"
   type        = bool
   default     = false
 }
@@ -155,6 +154,30 @@ variable "az2" {
   description = "AZ Zone to be used for HAGW deployment."
   type        = string
   default     = "az-2"
+}
+
+variable "resource_group" {
+  description = "Provide the name of an existing resource group."
+  type        = string
+  default     = null
+}
+
+variable "tunnel_detection_time" {
+  description = "The IPsec tunnel down detection time for the Spoke Gateway in seconds. Must be a number in the range [20-600]."
+  type        = number
+  default     = null
+}
+
+variable "tags" {
+  description = "Map of tags to assign to the gateway."
+  type        = map(string)
+  default     = null
+}
+
+variable "enable_multi_tier_transit" {
+  description = "Set to true to enable multi tier transit."
+  type        = bool
+  default     = false
 }
 
 locals {
