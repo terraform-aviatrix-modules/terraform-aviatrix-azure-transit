@@ -6,6 +6,7 @@ This module deploys a VNET and a set of Aviatrix transit gateways.
 ### Compatibility
 Module version | Terraform version | Controller version | Terraform provider version
 :--- | :--- | :--- | :---
+v4.0.1 | 0.13 + 0.14 | >=6.4 | >=0.2.19
 v4.0.0 | 0.13 + 0.14 | >=6.4 | >=0.2.19
 v3.0.1 | 0.13 | >=6.3 | >=0.2.18
 v3.0.0 | 0.13 | >=6.2 | >=0.2.17
@@ -23,7 +24,7 @@ with ha_gw set to false, the following will be deployed:
 ```
 module "transit_azure_1" {
   source  = "terraform-aviatrix-modules/azure-transit/aviatrix"
-  version = "4.0.0"
+  version = "4.0.1"
   
   cidr = "10.1.0.0/20"
   region = "West Europe"
