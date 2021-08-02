@@ -73,7 +73,8 @@ tunnel_detection_time | null | The IPsec tunnel down detection time for the Spok
 tags | null | Map of tags to assign to the gateway.
 enable_multi_tier_transit |	false |	Switch to enable multi tier transit
 local_as_number | | Transit GW AS Number. Mandatory when multi tier transit is enabled.
-
+learned_cidrs_approval_mode | | Learned cidrs approval mode. Defaults to Gateway. Valid values: gateway, connection
+china | false | Set to true when deploying this module in Azure China
 
 ### Outputs
 Outputs
