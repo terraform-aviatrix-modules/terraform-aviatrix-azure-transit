@@ -6,7 +6,7 @@ resource "aviatrix_vpc" "default" {
   cidr                 = var.cidr
   account_name         = var.account
   resource_group       = var.resource_group
-  aviatrix_firenet_vpc = var.enable_transit_firenet
+  aviatrix_firenet_vpc = true
 }
 
 #Transit GW
