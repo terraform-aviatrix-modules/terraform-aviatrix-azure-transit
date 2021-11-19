@@ -1,11 +1,12 @@
 #Transit VPC
 resource "aviatrix_vpc" "default" {
-  cloud_type     = local.cloud_type
-  name           = local.name
-  region         = var.region
-  cidr           = var.cidr
-  account_name   = var.account
-  resource_group = var.resource_group
+  cloud_type           = local.cloud_type
+  name                 = local.name
+  region               = var.region
+  cidr                 = var.cidr
+  account_name         = var.account
+  resource_group       = var.resource_group
+  aviatrix_firenet_vpc = true
 }
 
 #Transit GW
