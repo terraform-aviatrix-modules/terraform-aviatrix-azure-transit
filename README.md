@@ -83,7 +83,7 @@ This module will return the following objects:
 
 key | description
 :--- | :---
-vnet | The created vnet as an object with all of it's attributes. This was created using the aviatrix_vpc resource.
-transit_gateway | The created Aviatrix transit gateway as an object with all of it's attributes.
+[vnet](https://registry.terraform.io/providers/AviatrixSystems/aviatrix/latest/docs/resources/aviatrix_vpc) | The created VNET as an object with all of it's attributes. This was created using the aviatrix_vpc resource.
+[transit_gateway](https://registry.terraform.io/providers/AviatrixSystems/aviatrix/latest/docs/resources/aviatrix_transit_gateway) | The created Aviatrix transit gateway as an object with all of it's attributes.
 azure_vnet_name | The Azure vnet name created
 azure_rg_name | The Azure resource group name created
