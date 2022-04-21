@@ -49,12 +49,6 @@ variable "connected_transit" {
   default     = true
 }
 
-variable "active_mesh" {
-  description = "Enables Aviatrix active mesh"
-  type        = bool
-  default     = true
-}
-
 variable "bgp_manual_spoke_advertise_cidrs" {
   description = "Define a list of CIDRs that should be advertised via BGP."
   type        = string
