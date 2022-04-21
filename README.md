@@ -8,9 +8,12 @@ This module will no longer be maintained and updated.
 ### Description
 This module deploys a VNET and a set of Aviatrix transit gateways.
 
+**_Updated version 99 to support 6.6_**
+
 ### Compatibility
 Module version | Terraform version | Controller version | Terraform provider version
 :--- | :--- | :--- | :---
+v99.9 | 1.18 | 6.6.5545 | 2.21.2
 v4.0.1 | 0.13 + 0.14 | >=6.4 | >=0.2.19
 v4.0.0 | 0.13 + 0.14 | >=6.4 | >=0.2.19
 v3.0.1 | 0.13 | >=6.3 | >=0.2.18

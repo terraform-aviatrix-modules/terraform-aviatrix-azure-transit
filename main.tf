@@ -6,12 +6,11 @@ resource "aviatrix_vpc" "default" {
   cidr                 = var.cidr
   account_name         = var.account
   resource_group       = var.resource_group
-  aviatrix_firenet_vpc = true
+  aviatrix_firenet_vpc = false
 }
 
 #Transit GW
 resource "aviatrix_transit_gateway" "default" {
-  enable_active_mesh               = var.active_mesh
   cloud_type                       = local.cloud_type
   vpc_reg                          = var.region
   gw_name                          = local.name
